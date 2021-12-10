@@ -16,3 +16,14 @@ def playxplay(game):
         plays = "(".join(play.text.split('('))
         plays_list.append(plays)
     print(f"There have been {len(plays_list)} plays in the game so far.")
+
+def filter_byes(team_list, byes):
+    playing_teams = [n for n in team_list if not any(m in n for m in byes)]
+    return playing_teams
+
+def create_contest(playing_teams, location_list):
+    visiting_team = playing_teams[0::2]
+    home_team = playing_teams[1::2]
+    opponents = tuple(zip(visiting_team, home_team))
+    contest = dict(zip(opponents, location_list))
+    return contest

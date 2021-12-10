@@ -5,11 +5,17 @@
 
 
 * TASK Build URL
-** Build a dictionary of teams to their URL/HTML codes and find a way to access it to build the URL
-Need a dictionary or list of `gamecode` to build the URL for a given game, which corresponds to the date the game is played.
-*** TODO consume espn.com/nfl/schedule
-**** HOLD need to filter byes for each weeks
+** TODO Build a dictionary of scheduled games
+*** consume espn.com/nfl/schedule
+**** DONE filter byes for each weeks
+CLOSED: [2021-12-09 Thu 19:56]
  code written, just replicate for each week. Need to manually enter byes
+**** DONE build visitor/home/stadium dictionary
+CLOSED: [2021-12-09 Thu 19:57]
+*** TODO get gamecode (game date)
+build dictionary - by hand?
+datetime?
+*** NEXT get home and visitor codes
 
 ** URL components
 *** base = "https://scores.nbcsports.com/fb/"
@@ -29,6 +35,7 @@ Need a dictionary or list of `gamecode` to build the URL for a given game, which
 *** game url (in progress):  https://scores.nbcsports.com/fb/boxscore.asp?gamecode=20211121024&home=24&vis=23&meta=true
 
 * Functions
+** TODO add 'return' statements to scoreboard and playxplay
 ** Location/weather
 *** Determine which arena the game is played at, time of game, and weather conditions
 use 'home' team from URL dictionary
@@ -38,6 +45,7 @@ separate dictionary of teams and their home stadium location, consume weather co
 Need to distinguish between team-wide stats and individual player stats
 ** Play by play
 *** Take output from play x play and scrape into pandas dataframe
+
 
 * Scheduling
 ** How to run functions on all games currently in progress?
