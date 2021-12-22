@@ -3,7 +3,7 @@
 #DATE: <2021-12-09 Thu 10:30>
 * TASK Build URL
 ** HOLD Build a dictionary of scheduled games
-[][Dataframe with teams, team codes, stadiums built.]
+[[https://github.com/fiendskrah/nfldfs/blob/main/notebooks/gamecodes.ipynb][Dataframe with teams, team codes, stadiums built.]]
 Once 2022 schedule is released, can combine to create gamecodes
 This is assuming the nbcsports page will construct URLs the same way.
 *** consume espn.com/nfl/schedule
