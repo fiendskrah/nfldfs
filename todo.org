@@ -1,19 +1,19 @@
 #+TITLE: PROJECT TASK TRACKING DOCUMENT
 #+AUTHOR: DYLAN SKRAH
 #DATE: <2021-12-09 Thu 10:30>
-
 * TASK Build URL
-** TODO Build a dictionary of scheduled games
+** HOLD Build a dictionary of scheduled games
+[][Dataframe with teams, team codes, stadiums built.]
+Once 2022 schedule is released, can combine to create gamecodes
+This is assuming the nbcsports page will construct URLs the same way.
 *** consume espn.com/nfl/schedule
 **** DONE filter byes for each weeks
 CLOSED: [2021-12-09 Thu 19:56]
  code written, just replicate for each week. Need to manually enter byes?
 **** DONE build visitor/home/stadium dictionary
 CLOSED: [2021-12-09 Thu 19:57]
-*** TODO get gamecode (game date)
-build dictionary - by hand?
-datetime?
-*** NEXT get home and visitor codes
+*** DONE get gamecode (game date + 0 + home team code)
+CLOSED: [2021-12-21 Tue 22:28]
 
 ** URL components
 *** base = "https://scores.nbcsports.com/fb/"
@@ -21,7 +21,7 @@ datetime?
     box scores: boxscore.asp?
     play by play: pbp.asp?
 *** gamecode/home/vis =
-    "gamecode=<code>"
+    "gamecode=<date of game> + '0' + <home team code>
     "&home=<code>"
     "&vis=<code>"
 *** In progress/done =
@@ -35,21 +35,16 @@ datetime?
 ** TODO add 'return' statements to scoreboard and playxplay
 ** TODO create dashboard of highest performing players
 *** define performance for each position
-** Location/weather
-*** Determine which arena the game is played at, time of game, and weather conditions
-use 'home' team from URL dictionary
-separate dictionary of teams and their home stadium location, consume weather conditions through separate soup object
 ** Box scores
 *** Finish formatting
 Need to distinguish between team-wide stats and individual player stats
 ** Play by play
 *** Take output from play x play and scrape into pandas dataframe
 
-
-* Scheduling
 ** How to run functions on all games currently in progress?
-refresh every 30 seconds.
+refresh every 30 seconds?
+* Scheduling
 ** consume espn.com/nfl/schedule
 Code as written only works for weeks in which there are no completed contests. espn.com/nfl/schedule refreshes to reflect top stats from the contest.
-*** HOLD Run code when 2022 page goes live
+*** TODO Run code when 2022 page goes live
 **** WAITING Monitor changes in websites 2022 season approaches to ensure it will work

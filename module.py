@@ -20,7 +20,7 @@ def playxplay(game):
 
 # Make weekly schedule
 
-def make_schedule(week):
+def make_schedule_url(week):
     partial="https://www.espn.com/nfl/schedule/_/week/"
     url= f"{partial}{week}"
     return url
