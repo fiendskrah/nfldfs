@@ -2,14 +2,12 @@
 #+AUTHOR: DYLAN SKRAH
 #DATE: <2021-12-09 Thu 10:30>
 
-
-
 * TASK Build URL
 ** TODO Build a dictionary of scheduled games
 *** consume espn.com/nfl/schedule
 **** DONE filter byes for each weeks
 CLOSED: [2021-12-09 Thu 19:56]
- code written, just replicate for each week. Need to manually enter byes
+ code written, just replicate for each week. Need to manually enter byes?
 **** DONE build visitor/home/stadium dictionary
 CLOSED: [2021-12-09 Thu 19:57]
 *** TODO get gamecode (game date)
@@ -31,11 +29,12 @@ datetime?
     done: "final=true#"
 ** Example URLs
 *** game url (completed): https://scores.nbcsports.com/fb/boxscore.asp?gamecode=20211121016&home=16&vis=9&final=true#
-
 *** game url (in progress):  https://scores.nbcsports.com/fb/boxscore.asp?gamecode=20211121024&home=24&vis=23&meta=true
 
 * Functions
 ** TODO add 'return' statements to scoreboard and playxplay
+** TODO create dashboard of highest performing players
+*** define performance for each position
 ** Location/weather
 *** Determine which arena the game is played at, time of game, and weather conditions
 use 'home' team from URL dictionary
@@ -49,4 +48,8 @@ Need to distinguish between team-wide stats and individual player stats
 
 * Scheduling
 ** How to run functions on all games currently in progress?
-*** consume espn.com/nfl/schedule
+refresh every 30 seconds.
+** consume espn.com/nfl/schedule
+Code as written only works for weeks in which there are no completed contests. espn.com/nfl/schedule refreshes to reflect top stats from the contest.
+*** HOLD Run code when 2022 page goes live
+**** WAITING Monitor changes in websites 2022 season approaches to ensure it will work

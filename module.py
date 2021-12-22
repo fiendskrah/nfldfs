@@ -17,6 +17,28 @@ def playxplay(game):
         plays_list.append(plays)
     print(f"There have been {len(plays_list)} plays in the game so far.")
 
+
+# Make weekly schedule
+
+def make_schedule(week):
+    partial="https://www.espn.com/nfl/schedule/_/week/"
+    url= f"{partial}{week}"
+    return url
+
+def make_location_list():
+    locations = soup.findAll('td', attrs={'class':"schedule-location"})
+    location_list = []
+    for stadium in locations:
+        location_list.append(stadium.text)
+    return location_list
+
+def make_team_list():
+    teams = soup.findAll('a', attrs={'class':"team-name"})
+    team_list = []
+    for team in teams:
+        team_list.append(team.text)
+    return team_list
+
 def filter_byes(team_list, byes):
     playing_teams = [n for n in team_list if not any(m in n for m in byes)]
     return playing_teams
